@@ -1,0 +1,65 @@
+image:
+- Visual Studio 2017
+- Ubuntu1804
+matrix:
+  fast_finish: true
+build_script:
+- pwsh: >-
+    '# BUILD'
+
+
+    dir env:
+
+
+    [Environment]::MachineName
+
+
+    $PSVersionTable | Format-Table -Auto
+
+
+    Get-Variable | Format-Table -Auto
+
+
+    Get-ChildItem | Format-Table -Auto
+
+
+    throw 'Ack! Stop the build!'
+
+
+    exit 1
+test_script:
+- pwsh: >-
+    '# TESTS'
+
+
+    dir env:
+
+
+    [Environment]::MachineName
+
+
+    $PSVersionTable | Format-Table -Auto
+
+
+    Get-Variable | Format-Table -Auto
+
+
+    Get-ChildItem | Format-Table -Auto
+deploy_script:
+- pwsh: >-
+    '# DEPLOYMENT'
+
+
+    dir env:
+
+
+    [Environment]::MachineName
+
+
+    $PSVersionTable | Format-Table -Auto
+
+
+    Get-Variable | Format-Table -Auto
+
+
+    Get-ChildItem | Format-Table -Auto
